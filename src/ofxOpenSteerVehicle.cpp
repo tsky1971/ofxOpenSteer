@@ -17,7 +17,10 @@ void ofxOpenSteerVehicle::reset(){
 	clearTrailHistory();
 }
 void ofxOpenSteerVehicle::update(){
-	update(ofGetElapsedTimef(), 1.f/ofGetFrameRate());
+    float fps = ofGetFrameRate();
+    if(fps != 0) {
+        update(ofGetElapsedTimef(), 1.f/fps);
+    }
 }
 void ofxOpenSteerVehicle::update(float curTime, float elapsedTime){
 	applySteeringForce (getSteeringForce (elapsedTime), elapsedTime);

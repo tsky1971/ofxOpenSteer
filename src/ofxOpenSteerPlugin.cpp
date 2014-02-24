@@ -15,10 +15,9 @@ void ofxOpenSteerPlugin::setup(){
 void ofxOpenSteerPlugin::update(){
     float fps = ofGetFrameRate();
     // avoid a NaN
-    if(fps == 0) {
-        fps = ofGetTargetFrameRate();
+    if(fps != 0) {
+        update(ofGetElapsedTimef(), 1.f/fps);
     }
-	update(ofGetElapsedTimef(), 1.f/fps);
 }
 void ofxOpenSteerPlugin::update(float currentTime, float elapsedTime){
 	updatePhaseActive = true; //XXX ideally should be moved to main app's events, kepping it here so app can be cleaner. it's only safe while single threaded

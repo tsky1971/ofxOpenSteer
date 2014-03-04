@@ -11,7 +11,7 @@ class ofxOpenSteerVehicle: public SimpleVehicle{
         ofxOpenSteerVehicle();
         ~ofxOpenSteerVehicle();
         
-        virtual void reset();
+        void reset();
         virtual void update();
         virtual void update(float curTime, float elapsedTime);
         virtual void draw();    

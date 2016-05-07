@@ -185,7 +185,7 @@ OpenSteer::OpenSteerDemo::errorExit (const char* message)
 {
     printMessage (message);
 #ifdef _MSC_VER
-	MessageBox(0, message, "OpenSteerDemo Unfortunate Event", MB_ICONERROR);
+	MessageBox(0, (LPCWSTR) message, (LPCWSTR)"OpenSteerDemo Unfortunate Event", MB_ICONERROR);
 #endif
     exit (-1);
 }
